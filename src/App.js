@@ -1,11 +1,10 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 
 import Home from "./containers/Home/Home";
-import Auth from "./containers/Auth/Auth";
 import CreatePost from "./containers/CreatePost/CreatePost";
 import Post from "./containers/Post/Post";
 import User from "./containers/User/User";
-import { Switch, Route } from "react-router-dom";
 import Layout from "./hoc/Layout/Layout";
 
 function App() {
