@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavigationDropDown = (props) => {
-  console.log(props.items);
   return (
     <React.Fragment>
       <div className="navbar-item has-dropdown is-hoverable">
@@ -24,7 +23,7 @@ const NavigationDropDown = (props) => {
             Trending
           </Link>
           <Link className="navbar-item is-active" to="/">
-            Components
+            More
           </Link>
         </div>
       </div>

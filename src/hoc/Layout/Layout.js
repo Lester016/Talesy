@@ -5,7 +5,9 @@ const Layout = (props) => {
   return (
     <React.Fragment>
       <Navigation />
-      <div>{props.children}</div>
+      <div className="container" style={{ maxWidth: 1032 }}>
+        {props.children}
+      </div>
     </React.Fragment>
   );
 };

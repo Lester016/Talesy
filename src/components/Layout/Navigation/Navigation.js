@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <React.Fragment>
       <nav className="navbar is-danger">
-        <div className="container">
+        <div className="container" style={{ maxWidth: 1032 }}>
           <div className="navbar-brand">
             <Link className="navbar-item" to="/">
               <img
