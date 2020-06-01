@@ -5,17 +5,20 @@ import Auth from "./containers/Auth/Auth";
 import CreatePost from "./containers/CreatePost/CreatePost";
 import Post from "./containers/Post/Post";
 import User from "./containers/User/User";
+import { Switch, Route } from "react-router-dom";
+import Layout from "./hoc/Layout/Layout";
 
 function App() {
   console.log("App rendered");
   return (
-    <div>
-      <Home />
-      <Auth />
-      <CreatePost />
-      <Post />
-      <User />
-    </div>
+    <Layout>
+      <Switch>
+        <Route path="/user" component={User} />
+        <Route path="/post" component={Post} />
+        <Route path="/create-post" component={CreatePost} />
+        <Route path="/" exact component={Home} />
+      </Switch>
+    </Layout>
   );
 }
 
