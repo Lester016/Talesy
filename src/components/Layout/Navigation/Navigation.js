@@ -7,7 +7,7 @@ const Navigation = () => {
   console.log("Navigation rendered");
   return (
     <React.Fragment>
-      <nav className="navbar is-danger">
+      <nav className="navbar is-danger is-fixed-top">
         <div className="container" style={{ maxWidth: 1032 }}>
           <div className="navbar-brand">
             <Link className="navbar-item" to="/">
