@@ -7,11 +7,11 @@ const Home = () => {
       <div className="tile is-ancestor columns is-vcentered">
         <div className="tile is-parent column">
           <article className="tile is-child">
-            <span class="tag is-light">Technology</span>{" "}
-            <span class="tag is-light">Lifestyle</span>{" "}
-            <span class="tag is-light">Fitness</span>{" "}
-            <span class="tag is-light">Sports</span>{" "}
-            <span class="tag is-light">Psychology</span>
+            <span className="tag is-light">Technology</span>{" "}
+            <span className="tag is-light">Lifestyle</span>{" "}
+            <span className="tag is-light">Fitness</span>{" "}
+            <span className="tag is-light">Sports</span>{" "}
+            <span className="tag is-light">Psychology</span>
             <p className="title">
               This section will display all the trendings in different topics
             </p>
@@ -30,7 +30,10 @@ const Home = () => {
         </div>
         <div className="tile is-parent is-8 column">
           <article className="tile is-child">
-            <img src="https://miro.medium.com/max/1400/1*V08dt3odPfym4NSv3zB-1w.png" />
+            <img
+              src="https://miro.medium.com/max/1400/1*V08dt3odPfym4NSv3zB-1w.png"
+              alt="trending-img"
+            />
           </article>
         </div>
       </div>
@@ -63,6 +66,7 @@ const Home = () => {
                 src="https://wowthemesnet.github.io/template-mundana-bootstrap-html/assets/img/demo/blog4.jpg"
                 width="120"
                 height="80"
+                alt="recommended"
               />
             </div>
             <div className="column">
@@ -80,6 +84,7 @@ const Home = () => {
                 src="https://wowthemesnet.github.io/template-mundana-bootstrap-html/assets/img/demo/blog5.jpg"
                 width="120"
                 height="80"
+                alt="recommended"
               />
             </div>
             <div className="column">
@@ -97,6 +102,7 @@ const Home = () => {
                 src="https://wowthemesnet.github.io/template-mundana-bootstrap-html/assets/img/demo/blog6.jpg"
                 width="120"
                 height="80"
+                alt="recommended"
               />
             </div>
             <div className="column">
@@ -135,7 +141,10 @@ const Home = () => {
                 </div>
                 <div className="media-right">
                   <p className="image">
-                    <img src="https://bulma.io/images/placeholders/128x128.png" />
+                    <img
+                      src="https://bulma.io/images/placeholders/128x128.png"
+                      alt="recommended"
+                    />
                   </p>
                 </div>
               </article>
@@ -159,7 +168,10 @@ const Home = () => {
                 </div>
                 <div className="media-right">
                   <p className="image">
-                    <img src="https://bulma.io/images/placeholders/128x128.png" />
+                    <img
+                      src="https://bulma.io/images/placeholders/128x128.png"
+                      alt="recommended"
+                    />
                   </p>
                 </div>
               </article>
@@ -183,7 +195,10 @@ const Home = () => {
                 </div>
                 <div className="media-right">
                   <p className="image">
-                    <img src="https://bulma.io/images/placeholders/128x128.png" />
+                    <img
+                      src="https://bulma.io/images/placeholders/128x128.png"
+                      alt="recommended"
+                    />
                   </p>
                 </div>
               </article>
@@ -207,7 +222,10 @@ const Home = () => {
                 </div>
                 <div className="media-right">
                   <p className="image">
-                    <img src="https://bulma.io/images/placeholders/128x128.png" />
+                    <img
+                      src="https://bulma.io/images/placeholders/128x128.png"
+                      alt="recommended"
+                    />
                   </p>
                 </div>
               </article>
@@ -220,11 +238,11 @@ const Home = () => {
             <hr />
             <div className="content">
               <div className="media">
-                <figure class="media-left">
+                <figure className="media-left">
                   <h1>01</h1>
                 </figure>
-                <div class="media-content">
-                  <div class="content">
+                <div className="media-content">
+                  <div className="content">
                     <p>
                       <small>
                         <strong>
@@ -240,11 +258,11 @@ const Home = () => {
             </div>
             <div className="content">
               <div className="media">
-                <figure class="media-left">
+                <figure className="media-left">
                   <h1>02</h1>
                 </figure>
-                <div class="media-content">
-                  <div class="content">
+                <div className="media-content">
+                  <div className="content">
                     <p>
                       <small>
                         <strong>
@@ -260,11 +278,11 @@ const Home = () => {
             </div>
             <div className="content">
               <div className="media">
-                <figure class="media-left">
+                <figure className="media-left">
                   <h1>03</h1>
                 </figure>
-                <div class="media-content">
-                  <div class="content">
+                <div className="media-content">
+                  <div className="content">
                     <p>
                       <small>
                         <strong>
@@ -280,11 +298,11 @@ const Home = () => {
             </div>
             <div className="content">
               <div className="media">
-                <figure class="media-left">
+                <figure className="media-left">
                   <h1>04</h1>
                 </figure>
-                <div class="media-content">
-                  <div class="content">
+                <div className="media-content">
+                  <div className="content">
                     <p>
                       <small>
                         <strong>
