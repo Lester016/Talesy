@@ -2,7 +2,7 @@ import React from "react";
 
 const Modal = (props) => {
   return (
-    <div className="modal is active">
+    <div className="modal is-active">
       <div className="modal-background" onClick={props.close}></div>
       <div className="modal-card">
         <header className="modal-card-head">
