@@ -31,6 +31,6 @@ export const authenticate = (email, password, isSignUp) => {
   return {
     type: actionTypes.AUTH_USER,
     authData: authData,
-    isSignUp: isSignUp,
+    isSignUp: true,
   };
 };

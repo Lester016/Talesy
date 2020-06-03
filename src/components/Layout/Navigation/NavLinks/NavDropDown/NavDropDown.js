@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import NavItem from "../NavItem/NavItem";
 
-const NavigationDropDown = (props) => {
+const NavDropDown = (props) => {
   return (
     <React.Fragment>
       <div className="navbar-item has-dropdown is-hoverable">
@@ -10,25 +11,19 @@ const NavigationDropDown = (props) => {
         </Link>
         <div className="navbar-dropdown is-boxed">
           {props.items.map((item) => (
-            <Link
+            <NavItem
+              title={item.title}
               key={item.id}
-              className="navbar-item"
               to={"/topics/" + item.id}
-            >
-              {item.title}
-            </Link>
+            />
           ))}
           <hr className="navbar-divider" />
-          <Link className="navbar-item" to="/">
-            Trending
-          </Link>
-          <Link className="navbar-item is-active" to="/">
-            More
-          </Link>
+          <NavItem title="Trending" to="/trending" />
+          <NavItem title="More" to="/" />
         </div>
       </div>
     </React.Fragment>
   );
 };
 
-export default NavigationDropDown;
+export default NavDropDown;
