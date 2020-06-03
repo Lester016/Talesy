@@ -1,6 +1,7 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
+  authMode: null,
   token: null,
   userID: null,
   error: null,
@@ -26,6 +27,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.error,
+      };
+    case actionTypes.CHANGE_AUTH_MODE:
+      return {
+        ...state,
+        authMode: action.authMode,
       };
     default:
       return {

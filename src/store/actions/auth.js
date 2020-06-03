@@ -34,3 +34,11 @@ export const authenticate = (email, password, isSignUp) => {
     isSignUp: true,
   };
 };
+
+// Auth Mode.
+export const changeAuthMode = (mode) => {
+  return {
+    type: actionTypes.CHANGE_AUTH_MODE,
+    authMode: mode,
+  };
+};

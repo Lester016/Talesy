@@ -3,10 +3,11 @@ import { connect } from "react-redux";
 
 import NavLinks from "../../../components/Layout/Navigation/NavLinks/NavLinks";
 import NavBrand from "../../../components/Layout/Navigation/NavBrand/NavBrand";
+import AuthButtons from "./NavButtons/AuthButtons";
+import ProfileButton from "./NavButtons/ProfileButton";
 
 const Navigation = (props) => {
   console.log("Navigation rendered");
-  console.log("isAuth = ", props.isAuth);
   return (
     <React.Fragment>
       <nav className="navbar is-danger is-fixed-top">
@@ -20,24 +21,7 @@ const Navigation = (props) => {
             {/* Auth Buttons */}
             <div className="navbar-end">
               <div className="navbar-item">
-                <div className="field is-grouped">
-                  <p className="control">
-                    <button
-                      className="bd-tw-button button"
-                      onClick={() => console.log("login")}
-                    >
-                      <span>Sign in</span>
-                    </button>
-                  </p>
-                  <p className="control">
-                    <button
-                      className="button is-primary"
-                      onClick={() => console.log("register")}
-                    >
-                      <span>Get Started</span>
-                    </button>
-                  </p>
-                </div>
+                {props.isAuth ? <ProfileButton /> : <AuthButtons />}
               </div>
             </div>
           </div>
