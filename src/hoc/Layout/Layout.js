@@ -9,7 +9,7 @@ const Layout = (props) => {
     <React.Fragment>
       <Navigation />
       {/* Authentication */}
-      {props.authMode && <Auth authMode={props.authMode} />}
+      {props.authMode && <Auth />}
       <div
         className="container"
         style={{

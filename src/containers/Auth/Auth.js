@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { useForm } from "react-hook-form";
 
@@ -8,10 +8,8 @@ import SignIn from "../../components/Auth/SignIn/SignIn";
 import SignUp from "../../components/Auth/SignUp/SignUp";
 
 const Auth = (props) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const onSubmit = (data) => {
-    console.log(data);
-    setIsSubmitting(true);
+    props.onAuth(data.email, data.password, props.authMode);
   };
 
   const { register, handleSubmit, errors, watch } = useForm();
@@ -28,14 +26,14 @@ const Auth = (props) => {
           register={register}
           handleSubmit={handleSubmit(onSubmit)}
           errors={errors}
-          isLoading={isSubmitting}
+          isLoading={props.isSubmitting}
         />
       ) : (
         <SignUp
           register={register}
           handleSubmit={handleSubmit(onSubmit)}
           errors={errors}
-          isLoading={isSubmitting}
+          isLoading={props.isSubmitting}
           watch={watch}
         />
       )}
@@ -59,10 +57,19 @@ const Auth = (props) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
   return {
-    onChangeAuthMode: (mode) => dispatch(actions.changeAuthMode(mode)),
+    authMode: state.auth.authMode,
+    isSubmitting: state.auth.loading,
   };
 };
 
-export default connect(null, mapDispatchToProps)(Auth);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onChangeAuthMode: (mode) => dispatch(actions.changeAuthMode(mode)),
+    onAuth: (email, password, mode) =>
+      dispatch(actions.authenticate(email, password, mode)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

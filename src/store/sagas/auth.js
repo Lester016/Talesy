@@ -6,11 +6,11 @@ import * as actions from "../actions/auth";
 export function* authUserSaga(action) {
   // firebase api key AIzaSyCYtvvog_RrvK6mrtiFIPE6Vm_GPExkcjE.
   let url =
-    "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCYtvvog_RrvK6mrtiFIPE6Vm_GPExkcjE";
+    "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCYtvvog_RrvK6mrtiFIPE6Vm_GPExkcjE";
 
-  if (action.isSignUp) {
+  if (action.isSignUp === "register") {
     url =
-      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCYtvvog_RrvK6mrtiFIPE6Vm_GPExkcjE";
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCYtvvog_RrvK6mrtiFIPE6Vm_GPExkcjE";
   }
 
   try {
