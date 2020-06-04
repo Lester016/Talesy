@@ -32,6 +32,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         authMode: action.authMode,
+        error: null,
       };
     default:
       return {

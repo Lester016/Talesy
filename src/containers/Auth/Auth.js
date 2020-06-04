@@ -6,6 +6,8 @@ import * as actions from "../../store/actions/index";
 import Modal from "../../components/UI/Modal/Modal";
 import SignIn from "../../components/Auth/SignIn/SignIn";
 import SignUp from "../../components/Auth/SignUp/SignUp";
+import Notification from "../../components/UI/Notification/Notification";
+import { httpErrors } from "../../shared/utility";
 
 const Auth = (props) => {
   const onSubmit = (data) => {
@@ -20,6 +22,11 @@ const Auth = (props) => {
       close={() => props.onChangeAuthMode(null)}
       title={props.authMode === "login" ? "Sign In" : "Sign Up"}
     >
+      {/* Error */}
+      {props.responseError && (
+        <Notification message={httpErrors(props.responseError.message)} />
+      )}
+
       {/* Forms */}
       {props.authMode === "login" ? (
         <SignIn
@@ -61,6 +68,7 @@ const mapStateToProps = (state) => {
   return {
     authMode: state.auth.authMode,
     isSubmitting: state.auth.loading,
+    responseError: state.auth.error,
   };
 };
 
