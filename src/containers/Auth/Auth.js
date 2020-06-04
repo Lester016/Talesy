@@ -10,10 +10,11 @@ import SignUp from "../../components/Auth/SignUp/SignUp";
 const Auth = (props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const onSubmit = (data) => {
-    console.log(data)
-    setIsSubmitting(true)
+    console.log(data);
+    setIsSubmitting(true);
   };
-  const { register, handleSubmit, errors } = useForm();
+
+  const { register, handleSubmit, errors, watch } = useForm();
 
   console.log("Auth rendered");
   return (
@@ -30,7 +31,13 @@ const Auth = (props) => {
           isLoading={isSubmitting}
         />
       ) : (
-        <SignUp />
+        <SignUp
+          register={register}
+          handleSubmit={handleSubmit(onSubmit)}
+          errors={errors}
+          isLoading={isSubmitting}
+          watch={watch}
+        />
       )}
 
       {/* Switch for auth mode */}
