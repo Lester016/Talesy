@@ -17,7 +17,7 @@ const Layout = (props) => {
           marginRight: 10,
           marginLeft: 10,
           margin: "auto",
-          marginTop: 56,
+          marginTop: 52,
         }}
       >
         {props.children}

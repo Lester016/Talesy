@@ -8,7 +8,8 @@ const AuthButtons = (props) => {
     <div className="field is-grouped">
       <p className="control">
         <button
-          className="bd-tw-button button"
+          className="button is-small"
+          style={{ fontSize: 14 }}
           onClick={() => props.onChangeAuthMode("login")}
         >
           <span>Sign in</span>
@@ -16,7 +17,8 @@ const AuthButtons = (props) => {
       </p>
       <p className="control">
         <button
-          className="button is-primary"
+          className="button is-primary is-small"
+          style={{ fontSize: 14 }}
           onClick={() => props.onChangeAuthMode("register")}
         >
           <span>Get Started</span>
