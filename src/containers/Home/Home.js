@@ -14,7 +14,6 @@ const Home = () => {
       <div className="tile is-ancestor columns is-vcentered">
         <TrendingPosts />
       </div>
-      <hr />
       <div className="columns">
         <RecommendedPosts />
       </div>

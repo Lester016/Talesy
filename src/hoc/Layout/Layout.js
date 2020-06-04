@@ -10,7 +10,16 @@ const Layout = (props) => {
       <Navigation />
       {/* Authentication */}
       {props.authMode && <Auth authMode={props.authMode} />}
-      <div className="container" style={{ maxWidth: 1032, marginTop: 56 }}>
+      <div
+        className="container"
+        style={{
+          maxWidth: 1032,
+          marginRight: 10,
+          marginLeft: 10,
+          margin: "auto",
+          marginTop: 56,
+        }}
+      >
         {props.children}
       </div>
     </React.Fragment>
