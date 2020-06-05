@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import AllPosts from "../../components/Home/AllPosts/AllPosts";
@@ -7,7 +7,12 @@ import RecommendedPosts from "../../components/Home/RecommendedPosts/Recommended
 import TrendingPosts from "../../components/Home/TrendingPosts/TrendingPosts";
 import * as actions from "../../store/actions/index";
 
-const Home = () => {
+const Home = (props) => {
+  const { onGetAllPosts, allPosts, allPostsIsLoading } = props;
+  useEffect(() => {
+    onGetAllPosts();
+  }, [onGetAllPosts]);
+
   console.log("Home rendered");
   return (
     <React.Fragment>
@@ -19,7 +24,7 @@ const Home = () => {
       </div>
       <br />
       <div className="tile is-ancestor">
-        <AllPosts />
+        <AllPosts posts={allPosts} loading={allPostsIsLoading} />
         <PopularPosts />
       </div>
     </React.Fragment>
@@ -28,9 +33,15 @@ const Home = () => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAuth: (email, password) =>
-      dispatch(actions.authenticate(email, password)),
+    onGetAllPosts: () => dispatch(actions.getAllPosts()),
   };
 };
 
-export default connect(null, mapDispatchToProps)(Home);
+const mapStateToProps = (state) => {
+  return {
+    allPosts: state.allPosts.posts,
+    allPostsIsLoading: state.allPosts.loading,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

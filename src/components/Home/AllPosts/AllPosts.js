@@ -1,119 +1,22 @@
 import React from "react";
 
-const AllPosts = () => {
+import AllPost from "./AllPost/AllPost";
+
+const AllPosts = (props) => {
+  console.log("All Posts rendered", props.posts, props.loading);
+
+  // for (const key in props.posts) {
+  //   if (props.posts.hasOwnProperty(key)) {
+  //     const element = props.posts[key];
+  //     console.log(element);
+  //   }
+  // }
   return (
     <div className="tile is-parent is-8">
       <article className="tile is-child">
         <p className="title title title is-5">All Stories</p>
         <hr />
-        <div className="content">
-          <article className="media">
-            <div className="media-content">
-              <div className="content">
-                <h3>This is a sample title</h3>
-                <p>
-                  <small>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin.
-                    <br />
-                    <strong>John Smith</strong> in Technology
-                    <br />
-                    Jul 16 · 6 min read
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div className="media-right">
-              <p className="image">
-                <img
-                  src="https://bulma.io/images/placeholders/128x128.png"
-                  alt="recommended"
-                />
-              </p>
-            </div>
-          </article>
-        </div>
-        <div className="content">
-          <article className="media">
-            <div className="media-content">
-              <div className="content">
-                <h3>This is a sample title</h3>
-                <p>
-                  <small>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin.
-                    <br />
-                    <strong>John Smith</strong> in Technology
-                    <br />
-                    Jul 16 · 6 min read
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div className="media-right">
-              <p className="image">
-                <img
-                  src="https://bulma.io/images/placeholders/128x128.png"
-                  alt="recommended"
-                />
-              </p>
-            </div>
-          </article>
-        </div>
-        <div className="content">
-          <article className="media">
-            <div className="media-content">
-              <div className="content">
-                <h3>This is a sample title</h3>
-                <p>
-                  <small>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin.
-                    <br />
-                    <strong>John Smith</strong> in Technology
-                    <br />
-                    Jul 16 · 6 min read
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div className="media-right">
-              <p className="image">
-                <img
-                  src="https://bulma.io/images/placeholders/128x128.png"
-                  alt="recommended"
-                />
-              </p>
-            </div>
-          </article>
-        </div>
-        <div className="content">
-          <article className="media">
-            <div className="media-content">
-              <div className="content">
-                <h3>This is a sample title</h3>
-                <p>
-                  <small>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin.
-                    <br />
-                    <strong>John Smith</strong> in Technology
-                    <br />
-                    Jul 16 · 6 min read
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div className="media-right">
-              <p className="image">
-                <img
-                  src="https://bulma.io/images/placeholders/128x128.png"
-                  alt="recommended"
-                />
-              </p>
-            </div>
-          </article>
-        </div>
+        <AllPost />
       </article>
     </div>
   );

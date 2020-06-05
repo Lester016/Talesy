@@ -9,7 +9,8 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 import authReducer from "./store/reducers/auth";
-import { watchAuth } from "./store/sagas";
+import allPostsReducer from "./store/reducers/allPosts";
+import { watchAuth, watchAllPosts } from "./store/sagas";
 
 // This is for browser devtools.
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -17,6 +18,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // collections of reducer.
 const rootReducers = combineReducers({
   auth: authReducer,
+  allPosts: allPostsReducer,
 });
 
 // Instantiate saga.
@@ -28,6 +30,7 @@ const store = createStore(
 );
 
 sagaMiddleware.run(watchAuth);
+sagaMiddleware.run(watchAllPosts);
 
 ReactDOM.render(
   <Provider store={store}>
