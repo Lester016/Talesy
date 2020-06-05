@@ -1,3 +1,5 @@
+import { MONTHS } from "./constants";
+
 export const httpErrors = (error) => {
   switch (error) {
     case "EMAIL_NOT_FOUND":
@@ -12,3 +14,29 @@ export const httpErrors = (error) => {
       return;
   }
 };
+
+export const getPublishDate = (date) => {
+  return MONTHS[new Date(date).getDay()] + " " + new Date(date).getDate();
+};
+
+export const getContentIntro = (content) => {
+  let intro;
+  // Get the first object that has a text.
+  let tempContent = JSON.parse(content);
+  for (let i = 0; i < tempContent.blocks.length; i++) {
+    if (tempContent.blocks[i].text.trim() !== "") {
+      intro = JSON.stringify(tempContent.blocks[i].text).replace(/\\n/g, "");
+      break;
+    }
+  }
+
+  // If text is more than 50 it will be trim.
+  let trimmedContent;
+  if (intro.length > 140) {
+    trimmedContent = intro.substr(1, 140) + ". . .";
+  } else {
+    trimmedContent = intro.substring(1, intro.length - 1);
+  }
+  return trimmedContent;
+};
+

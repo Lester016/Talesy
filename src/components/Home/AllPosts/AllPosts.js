@@ -3,20 +3,21 @@ import React from "react";
 import AllPost from "./AllPost/AllPost";
 
 const AllPosts = (props) => {
-  console.log("All Posts rendered", props.posts, props.loading);
-
-  // for (const key in props.posts) {
-  //   if (props.posts.hasOwnProperty(key)) {
-  //     const element = props.posts[key];
-  //     console.log(element);
-  //   }
+  console.log("All Posts rendered");
+  let posts = props.posts;
+  // if (posts) {
+  //   Object.keys(posts).map((element) => console.log(posts[element]));
   // }
   return (
     <div className="tile is-parent is-8">
       <article className="tile is-child">
         <p className="title title title is-5">All Stories</p>
         <hr />
-        <AllPost />
+        {posts
+          ? Object.keys(posts).map((element) => {
+              return <AllPost key={element} {...posts[element]} />;
+            })
+          : "Loading..."}
       </article>
     </div>
   );

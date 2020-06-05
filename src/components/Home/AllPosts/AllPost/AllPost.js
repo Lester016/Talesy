@@ -1,6 +1,8 @@
 import React from "react";
+import { getPublishDate, getContentIntro } from "../../../../shared/utility";
 
 const AllPost = (props) => {
+  console.log("AllPost rendered");
   return (
     <div className="content">
       <article className="media">
@@ -9,21 +11,21 @@ const AllPost = (props) => {
             <h3>{props.title}</h3>
             <p>
               <small>
-                {props.intro}
+                {getContentIntro(props.content)}
                 <br />
                 <strong>{props.author}</strong>{" "}
-                {props.tags && " in " + props.tags}
+                {props.tags && " in " + props.tags[0]}
                 <br />
-                {props.datePublished} · {props.timeRead} min read
+                {getPublishDate(props.date)} · {props.readTime} min read
               </small>
             </p>
           </div>
         </div>
-        <div className="media-right">
+        {/* <div className="media-right">
           <p className="image">
             <img src={props.image} alt="recommended" />
           </p>
-        </div>
+        </div> */}
       </article>
     </div>
   );
