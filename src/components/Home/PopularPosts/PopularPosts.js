@@ -1,91 +1,23 @@
 import React from "react";
 
-const PopularPosts = () => {
+import PopularPost from "./PopularPost/PopularPost";
+
+const PopularPosts = (props) => {
+  console.log("Popular Posts rendered");
+  let posts = props.posts;
+
   return (
     <div className="tile is-parent">
       <article className="tile is-child">
         <p className="title title title is-5">Popular Stories</p>
         <hr />
-        <div className="content">
-          <div className="media">
-            <figure className="media-left">
-              <h1>01</h1>
-            </figure>
-            <div className="media-content">
-              <div className="content">
-                <p>
-                  <small>
-                    <strong>
-                      Did Supernovae Kill Off Large Ocean Animals?
-                    </strong>
-                    <br />
-                    Jake Blythe in Technology 31m
-                  </small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="content">
-          <div className="media">
-            <figure className="media-left">
-              <h1>02</h1>
-            </figure>
-            <div className="media-content">
-              <div className="content">
-                <p>
-                  <small>
-                    <strong>
-                      Did Supernovae Kill Off Large Ocean Animals?
-                    </strong>
-                    <br />
-                    Jake Blythe in Technology 31m
-                  </small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="content">
-          <div className="media">
-            <figure className="media-left">
-              <h1>03</h1>
-            </figure>
-            <div className="media-content">
-              <div className="content">
-                <p>
-                  <small>
-                    <strong>
-                      Did Supernovae Kill Off Large Ocean Animals?
-                    </strong>
-                    <br />
-                    Jake Blythe in Technology 31m
-                  </small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="content">
-          <div className="media">
-            <figure className="media-left">
-              <h1>04</h1>
-            </figure>
-            <div className="media-content">
-              <div className="content">
-                <p>
-                  <small>
-                    <strong>
-                      Did Supernovae Kill Off Large Ocean Animals?
-                    </strong>
-                    <br />
-                    Jake Blythe in Technology 31m
-                  </small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {posts
+          ? Object.keys(posts).map((element, index) => {
+              return (
+                <PopularPost key={element} index={index+1} {...posts[element]} />
+              );
+            })
+          : "Loading..."}
       </article>
     </div>
   );

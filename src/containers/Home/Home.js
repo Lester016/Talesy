@@ -8,10 +8,19 @@ import TrendingPosts from "../../components/Home/TrendingPosts/TrendingPosts";
 import * as actions from "../../store/actions/index";
 
 const Home = (props) => {
-  const { onGetAllPosts, allPosts, allPostsIsLoading } = props;
+  const {
+    onGetAllPosts,
+    allPosts,
+    allPostsIsLoading,
+    popularPosts,
+    popularPostsIsLoading,
+    onGetPopularPosts,
+  } = props;
+
   useEffect(() => {
     onGetAllPosts();
-  }, [onGetAllPosts]);
+    onGetPopularPosts();
+  }, [onGetAllPosts, onGetPopularPosts]);
 
   console.log("Home rendered");
   return (
@@ -25,7 +34,7 @@ const Home = (props) => {
       <br />
       <div className="tile is-ancestor">
         <AllPosts posts={allPosts} loading={allPostsIsLoading} />
-        <PopularPosts />
+        <PopularPosts posts={popularPosts} loading={popularPostsIsLoading} />
       </div>
     </React.Fragment>
   );
@@ -34,6 +43,7 @@ const Home = (props) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onGetAllPosts: () => dispatch(actions.getAllPosts()),
+    onGetPopularPosts: () => dispatch(actions.getPopularPosts()),
   };
 };
 
@@ -41,6 +51,8 @@ const mapStateToProps = (state) => {
   return {
     allPosts: state.allPosts.posts,
     allPostsIsLoading: state.allPosts.loading,
+    popularPosts: state.popularPosts.posts,
+    popularPostsIsLoading: state.popularPosts.loading,
   };
 };
 
