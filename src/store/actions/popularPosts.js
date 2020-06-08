@@ -7,9 +7,16 @@ export const getPopularPostsStart = () => {
 };
 
 export const getPopularPostsSuccess = (posts) => {
+  // Sort posts by visitors.
+  let sortedPostsByVisitors = Object.keys(posts).sort(function (a, b) {
+    return posts[b].visitors - posts[a].visitors;
+  });
+
+  let sortedPosts = sortedPostsByVisitors.map((index) => posts[index]);
+
   return {
     type: actionTypes.GET_POPULAR_POSTS_SUCCESS,
-    posts: posts,
+    posts: sortedPosts,
   };
 };
 
