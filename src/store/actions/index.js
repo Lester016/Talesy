@@ -2,3 +2,5 @@
 export { authenticate, changeAuthMode } from "./auth";
 
 export { getAllPosts } from "./allPosts";
+
+export { getPopularPosts } from "./popularPosts";
