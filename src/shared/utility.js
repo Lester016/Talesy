@@ -40,3 +40,20 @@ export const getContentIntro = (content) => {
   return trimmedContent;
 };
 
+export const getReadTime = (post) => {
+  let content = JSON.parse(post);
+  if (content !== null) {
+    let wordCount = 0;
+    let tempReadTime;
+    for (let i = 0; i < content.blocks.length; i++) {
+      let str = JSON.stringify(content.blocks[i].text)
+        .replace(/\\n/g, "")
+        .trim();
+      wordCount = wordCount + str.split(" ").length;
+      let wordsPerMinute = 200;
+      tempReadTime = Math.ceil(wordCount / wordsPerMinute) - 1;
+      tempReadTime = tempReadTime ? tempReadTime : 1;
+    }
+    return tempReadTime;
+  }
+};

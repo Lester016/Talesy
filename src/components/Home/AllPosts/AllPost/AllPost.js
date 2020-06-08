@@ -1,8 +1,12 @@
 import React from "react";
-import { getPublishDate, getContentIntro } from "../../../../shared/utility";
+
+import {
+  getPublishDate,
+  getContentIntro,
+  getReadTime,
+} from "../../../../shared/utility";
 
 const AllPost = (props) => {
-  console.log("AllPost rendered");
   return (
     <div className="content">
       <article className="media">
@@ -16,7 +20,8 @@ const AllPost = (props) => {
                 <strong>{props.author}</strong>{" "}
                 {props.tags && " in " + props.tags[0]}
                 <br />
-                {getPublishDate(props.date)} · {props.readTime} min read
+                {getPublishDate(props.date)} · {getReadTime(props.content)} min
+                read
               </small>
             </p>
           </div>
