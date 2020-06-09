@@ -35,6 +35,12 @@ export const authenticate = (email, password, isSignUp) => {
   };
 };
 
+export const authCheckState = () => {
+  return {
+    type: actionTypes.AUTH_CHECK_STATE,
+  };
+};
+
 // Auth Mode.
 export const changeAuthMode = (mode) => {
   return {
