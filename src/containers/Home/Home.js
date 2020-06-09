@@ -20,17 +20,14 @@ const Home = (props) => {
   useEffect(() => {
     onGetAllPosts();
     onGetPopularPosts();
-  }, [onGetAllPosts, onGetPopularPosts]);
+    console.log(props.isAuth);
+  }, [onGetAllPosts, onGetPopularPosts, props.isAuth]);
 
   console.log("Home rendered");
   return (
     <React.Fragment>
       <TrendingPosts />
-      {props.isAuth && (
-        <React.Fragment>
-          <RecommendedPosts />
-        </React.Fragment>
-      )}
+      <RecommendedPosts />
       <br />
       <div className="tile is-ancestor">
         <AllPosts posts={allPosts} loading={allPostsIsLoading} />
