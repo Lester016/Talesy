@@ -14,13 +14,18 @@ const Layout = (props) => {
         className="container"
         style={{
           maxWidth: 1032,
-          marginRight: 10,
-          marginLeft: 10,
           margin: "auto",
           marginTop: 52,
         }}
       >
-        {props.children}
+        <div
+          style={{
+            marginRight: 10,
+            marginLeft: 10,
+          }}
+        >
+          {props.children}
+        </div>
       </div>
     </React.Fragment>
   );

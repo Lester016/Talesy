@@ -25,12 +25,12 @@ const Home = (props) => {
   console.log("Home rendered");
   return (
     <React.Fragment>
-      <div className="tile is-ancestor columns is-vcentered">
-        <TrendingPosts />
-      </div>
-      <div className="columns">
-        <RecommendedPosts />
-      </div>
+      <TrendingPosts />
+      {props.isAuth && (
+        <React.Fragment>
+          <RecommendedPosts />
+        </React.Fragment>
+      )}
       <br />
       <div className="tile is-ancestor">
         <AllPosts posts={allPosts} loading={allPostsIsLoading} />
@@ -49,6 +49,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
+    isAuth: state.auth.token !== null,
     allPosts: state.allPosts.posts,
     allPostsIsLoading: state.allPosts.loading,
     popularPosts: state.popularPosts.posts,

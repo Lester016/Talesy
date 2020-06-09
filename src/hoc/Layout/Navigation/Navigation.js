@@ -11,7 +11,7 @@ const Navigation = (props) => {
   return (
     <React.Fragment>
       <nav className="navbar is-danger is-fixed-top">
-        <div className="container" style={{ maxWidth: 1032 }}>
+        <div className="container" style={{ maxWidth: 1012 }}>
           <NavBrand />
 
           <div id="navbarExampleTransparentExample" className="navbar-menu">
