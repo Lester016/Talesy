@@ -41,6 +41,26 @@ export const authCheckState = () => {
   };
 };
 
+// Logout.
+export const clearTokenStart = () => {
+  return {
+    type: actionTypes.AUTH_INIT_CLEAR_TOKEN,
+  };
+};
+
+export const clearTokenSucceed = () => {
+  return {
+    type: actionTypes.AUTH_CLEAR_TOKEN,
+  };
+};
+
+export const authLogout = (expirationDate) => {
+  return {
+    type: actionTypes.AUTH_LOGOUT,
+    expirationDate: expirationDate,
+  };
+};
+
 // Auth Mode.
 export const changeAuthMode = (mode) => {
   return {
