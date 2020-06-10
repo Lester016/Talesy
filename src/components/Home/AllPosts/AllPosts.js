@@ -4,7 +4,7 @@ import AllPost from "./AllPost/AllPost";
 
 const AllPosts = (props) => {
   console.log("All Posts rendered");
-  let posts = props.posts;
+  const { posts } = props;
   // if (posts) {
   //   Object.keys(posts).map((element) => console.log(posts[element]));
   // }

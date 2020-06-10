@@ -4,7 +4,7 @@ import PopularPost from "./PopularPost/PopularPost";
 
 const PopularPosts = (props) => {
   console.log("Popular Posts rendered");
-  let posts = props.posts;
+  const { posts } = props;
 
   return (
     <div className="tile is-parent">
@@ -14,7 +14,11 @@ const PopularPosts = (props) => {
         {posts
           ? Object.keys(posts).map((element, index) => {
               return (
-                <PopularPost key={element} index={index+1} {...posts[element]} />
+                <PopularPost
+                  key={element}
+                  index={index + 1}
+                  {...posts[element]}
+                />
               );
             })
           : "Loading..."}

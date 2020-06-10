@@ -16,7 +16,7 @@ function App(props) {
   useEffect(() => {
     onAutoSignup();
   }, [onAutoSignup]);
-  
+
   return (
     <Layout>
       <Switch>

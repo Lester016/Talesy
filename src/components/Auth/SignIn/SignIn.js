@@ -26,10 +26,6 @@ const SignIn = (props) => {
           type="password"
           refRegister={props.register({
             required: "This field is required",
-            minLength: {
-              value: 6,
-              message: "Password must have at least 6 characters",
-            },
           })}
           error={props.errors.password}
         />
