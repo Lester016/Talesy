@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import NavLinks from "../../../components/Layout/Navigation/NavLinks/NavLinks";
-import NavBrand from "../../../components/Layout/Navigation/NavBrand/NavBrand";
+import NavLinks from "../../components/Layout/Navigation/NavLinks/NavLinks";
+import NavBrand from "../../components/Layout/Navigation/NavBrand/NavBrand";
 import AuthButtons from "./NavButtons/AuthButtons";
 import ProfileButton from "./NavButtons/ProfileButton";
 

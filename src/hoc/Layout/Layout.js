@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import Navigation from "../Layout/Navigation/Navigation";
+import Navigation from "../../containers/Navigation/Navigation";
 import Auth from "../../containers/Auth/Auth";
 
 const Layout = (props) => {
